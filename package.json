@@ -1,0 +1,40 @@
+{
+  "name": "react-native-flatlist-animated",
+  "author": "Onur Uludağ",
+  "version": "0.1.1",
+  "description": "Animated FlatList component that supports entering, exiting and reordering animations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-native": "^0.67.3",
+    "react": "16.13.1",
+    "react-native": "~0.63.4",
+    "typescript": "~4.0.0"
+  },
+  "homepage": "https://github.com/odling/react-native-flatlist-animated",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odling/react-native-flatlist-animated"
+  },
+  "bugs": {
+    "url": "https://github.com/odling/react-native-flatlist-animated/issues"
+  },
+  "keywords": [
+    "react-native",
+    "flatlist",
+    "react-component",
+    "react-native-component",
+    "animated",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "unmounting",
+    "transition",
+    "layout"
+  ],
+  "license": "MIT"
+}
