@@ -1,10 +1,10 @@
-## Install Expo CLI
+# Install Expo CLI
 `npm install --global expo-cli`
 
-## Install Packages
+# Install Packages
 `npm install`
 
-## Start the App
+# Start the App
 `expo start`
 
 
