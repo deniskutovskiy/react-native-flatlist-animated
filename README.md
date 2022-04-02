@@ -68,5 +68,5 @@ Check full example in the `Example` folder.
 - Press `Delete Item` to remove a random entry from the list.
 - Press `Reorder Item` to pick a random entry and change its position randomly.
 
-**Note:** The assets used in the example app represent imaginery characters but influenced by real friendship. I have used Aseprite for pixel art.
+**Note:** The assets used in the example app represent imaginary characters but influenced by real friendship. I have used Aseprite for pixel art.
 
