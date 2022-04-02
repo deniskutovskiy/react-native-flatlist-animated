@@ -8,7 +8,15 @@ Supports `zoom`, `fade` and `slide` animations for enterance and exit.
 
 ![zoom](https://user-images.githubusercontent.com/87723231/161383297-f2d46059-ce73-4b72-b04f-a6612a848b0a.gif)
 ![slide](https://user-images.githubusercontent.com/87723231/161383344-963449ce-a1cf-494d-905e-2af3fd3cb341.gif)
-![fade](https://user-images.githubusercontent.com/87723231/161383500-1f4af303-4326-422e-9b9d-babecb9df40a.gif)
+
+# Key Advantages
+- No animation on layout properties (better performance)
+- Handles unmounting and mounting animations
+- Handles list re-ordering
+- Native driver is used in all animations
+- Supports React Native FlatList props
+- JavaScript only implementation
+- Fully typed
 
 # Usage
 ```ts
