@@ -3,16 +3,32 @@
   "author": "Onur Uludağ",
   "version": "0.1.1",
   "description": "Animated FlatList component that supports entering, exiting and reordering animations.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "@types/react": "^17.0.43",
     "@types/react-native": "^0.67.3",
+    "prettier": "^2.6.2",
     "react": "16.13.1",
     "react-native": "~0.63.4",
-    "typescript": "~4.0.0"
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.3"
   },
   "homepage": "https://github.com/odling/react-native-flatlist-animated",
   "repository": {

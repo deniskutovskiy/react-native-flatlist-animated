@@ -1,10 +1,10 @@
-import { Animated } from "react-native";
+import { Animated } from 'react-native';
 
 export interface IAnimationSelection {
   entering: keyof typeof EnteringAnimations;
   exiting: keyof typeof ExitingAnimations;
-  reordering: keyof typeof ReorderingAnimations | "none";
-  transition: "spring" | "timing";
+  reordering: keyof typeof ReorderingAnimations | 'none';
+  transition: 'spring' | 'timing';
 }
 
 export interface IAnimationProps {
@@ -20,7 +20,7 @@ export interface IAnimationProps {
   containerHeight: number;
   invertedFactor: 1 | -1;
   horizontal: boolean;
-  horizontalSlideRange: number
+  horizontalSlideRange: number;
 }
 
 export const EnteringAnimations = {
@@ -29,7 +29,7 @@ export const EnteringAnimations = {
     const translateX = props.enterProgress.interpolate({
       inputRange: [0, 1],
       outputRange: [props.horizontalSlideRange, 0],
-      extrapolate: "clamp",
+      extrapolate: 'clamp',
     });
     return { transform: [{ translateX }, { translateY }] };
   },
@@ -38,7 +38,7 @@ export const EnteringAnimations = {
     const translateX = props.enterProgress.interpolate({
       inputRange: [0, 1],
       outputRange: [-props.horizontalSlideRange, 0],
-      extrapolate: "clamp",
+      extrapolate: 'clamp',
     });
     return { transform: [{ translateX }, { translateY }] };
   },
@@ -63,7 +63,7 @@ export const ExitingAnimations = {
     const translateX = props.exitProgress.interpolate({
       inputRange: [0, 1],
       outputRange: [0, -props.horizontalSlideRange],
-      extrapolate: "clamp",
+      extrapolate: 'clamp',
     });
     return { transform: [{ translateX }] };
   },
@@ -71,7 +71,7 @@ export const ExitingAnimations = {
     const translateX = props.exitProgress.interpolate({
       inputRange: [0, 1],
       outputRange: [0, props.horizontalSlideRange],
-      extrapolate: "clamp",
+      extrapolate: 'clamp',
     });
     return { transform: [{ translateX }] };
   },
@@ -132,7 +132,7 @@ export const ReorderingAnimations = {
       scale = props.progress.interpolate({
         inputRange: [0, exitPeriod / 2, 1],
         outputRange: [1, 0, 1],
-        extrapolate: "clamp",
+        extrapolate: 'clamp',
       });
       opacity = props.progress.interpolate({
         inputRange: [0, exitPeriod, 1],
@@ -149,11 +149,10 @@ export const ReorderingAnimations = {
     scale = props.progress.interpolate({
       inputRange: [0, exitPeriod / 2, 1],
       outputRange: [1, 0, 1],
-      extrapolate: "clamp",
+      extrapolate: 'clamp',
     });
 
-    let { transform } =
-      LayoutTransitions[props.horizontal ? "horizontal" : "vertical"](props);
+    const { transform } = LayoutTransitions[props.horizontal ? 'horizontal' : 'vertical'](props);
     translateY = transform[0].translateY;
 
     return { transform: [{ translateY }, { scale }], opacity };
@@ -167,8 +166,7 @@ export const ReorderingAnimations = {
       inputRange: [0, exitPeriod, 1],
       outputRange: [1, 0, 1],
     });
-    const { transform } =
-      LayoutTransitions[props.horizontal ? "horizontal" : "vertical"](props);
+    const { transform } = LayoutTransitions[props.horizontal ? 'horizontal' : 'vertical'](props);
     translateY = transform[0].translateY;
 
     return { opacity, transform: [{ translateY }] };
