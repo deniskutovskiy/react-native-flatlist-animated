@@ -4584,10 +4584,10 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
-"react-native-flatlist-animated@^0.1.3":
-  "integrity" "sha512-AKvH/XMC0keJgup7Sl4MV8wraaghgBR0x8ougA+bNSuMA1gY/PSmIalvzNvt465P0n4TxbjnqzL8szZ8TW2VMg=="
-  "resolved" "https://registry.npmjs.org/react-native-flatlist-animated/-/react-native-flatlist-animated-0.1.3.tgz"
-  "version" "0.1.3"
+"react-native-flatlist-animated@^0.1.5":
+  "integrity" "sha512-db73kT3WFLpAeXQ9e4vjj/w2ek5IRihC4+D8wcV+hXp2yYAyuWgzZQ7SU9Z+zse3Me+iLq7A0fs5+LhsnctlXw=="
+  "resolved" "https://registry.npmjs.org/react-native-flatlist-animated/-/react-native-flatlist-animated-0.1.5.tgz"
+  "version" "0.1.5"
 
 "react-native-safe-area-context@3.3.2":
   "integrity" "sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q=="
