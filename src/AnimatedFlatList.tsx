@@ -58,6 +58,11 @@ const AnimatedFlatList = React.forwardRef(
       exitDuration = 250,
       horizontal,
       horizontalSlideRange = Dimensions.get('window').width,
+      keyExtractor = (item: { [key: string]: any }, index: number) => {
+        if (item.key && typeof item.key === 'string') return item.key;
+        if (item.id && typeof item.id === 'string') return item.id;
+        return index.toString();
+      },
       ...otherProps
     }: FlatListProps<any> & AnimatedFlatListProps,
     ref: ForwardedRef<FlatList<any>>,
@@ -65,12 +70,12 @@ const AnimatedFlatList = React.forwardRef(
     const oldData = useRef(data);
     useEffect(() => {
       if (oldData.current.length >= data.length)
-        data = data.filter((item, _index) => !item.key.includes('---empty---'));
+        data = data.filter((item, index) => !keyExtractor(item, index).includes('---empty---'));
       oldData.current = data;
     });
 
-    const keys: string[] = data.map((item) => item.key);
-    const oldKeys: string[] = oldData.current.map((item) => item.key);
+    const keys: string[] = data.map((item, index) => keyExtractor(item, index));
+    const oldKeys: string[] = oldData.current.map((item, index) => keyExtractor(item, index));
 
     const progress = useRef(new Animated.Value(1)).current;
     const enterProgress = useRef(new Animated.Value(1)).current;
@@ -146,13 +151,13 @@ const AnimatedFlatList = React.forwardRef(
     // console.log("Animated Flatlist");
     const renderAnimatedItem = ({ item, index, separators }) => {
       const hasExitingValue: boolean = oldKeys[index] && !keys.includes(oldKeys[index]);
-      const hasEnteringValue: boolean = !oldKeys.includes(item.key);
+      const hasEnteringValue: boolean = !oldKeys.includes(keyExtractor(item, index));
 
       let translateFrom: number;
       const translateTo: number = index;
 
       if (!hasEnteringValue) {
-        translateFrom = oldKeys.findIndex((key) => key === item.key);
+        translateFrom = oldKeys.findIndex((key) => key === keyExtractor(item, index));
       } else {
         translateFrom = index;
       }
@@ -190,7 +195,7 @@ const AnimatedFlatList = React.forwardRef(
       }
 
       let children: JSX.Element;
-      if (item.key.includes('---empty---')) {
+      if (keyExtractor(item, index).includes('---empty---')) {
         children = null;
       } else {
         children = renderItem({ item, index, separators });
