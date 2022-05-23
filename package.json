@@ -1,7 +1,7 @@
 {
   "name": "react-native-flatlist-animated",
   "author": "Onur Uludağ",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Animated FlatList component that supports entering, exiting and reordering animations.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
