@@ -26,7 +26,7 @@ interface ISpringConfig {
 }
 
 interface AnimatedFlatListProps {
-  data: { key?: string; id?: string; value: any }[];
+  data: { key?: string; id?: string; [key: string]: any }[];
   renderItem({ item, index, separators }): any;
   itemContainerHeight: number;
   inverted?: boolean;
