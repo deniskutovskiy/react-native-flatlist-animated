@@ -31,13 +31,13 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.6.3"
   },
-  "homepage": "https://github.com/odling/react-native-flatlist-animated",
+  "homepage": "https://github.com/deniskutovskiy/react-native-flatlist-animated",
   "repository": {
     "type": "git",
-    "url": "https://github.com/odling/react-native-flatlist-animated"
+    "url": "https://github.com/deniskutovskiy/react-native-flatlist-animated"
   },
   "bugs": {
-    "url": "https://github.com/odling/react-native-flatlist-animated/issues"
+    "url": "https://github.com/deniskutovskiy/react-native-flatlist-animated/issues"
   },
   "keywords": [
     "react-native",
@@ -53,5 +53,8 @@
     "transition",
     "layout"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
